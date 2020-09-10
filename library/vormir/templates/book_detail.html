@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Detail{% endblock title %}
+
+{% block content %}
+
+<br>
+<div class="album py-5" style="background-color:#04010f">
+<div class="container" style = " background-color: #04010f">
+<section class="jumbotron text-center" style ="background-color:#1e2021">
+  <h5 class="card-header">Book Info</h5>
+  <div class="card-body">
+    <img class="img-fluid" src="{{cover.url}}"  >
+
+    <h5 class="card-title" style="color:grey">Book :{{book.name}}</h5>
+    <p class="card-text" style="color:grey">Author :{{book.author}}</p>
+    <p class="card-text" style="color:grey">Year: {{book.year_of_release}}</p>
+    <p class="card-text" style="color:grey">Genre: {{book.genre}}</p>
+    <p class="card-text" style="color:grey">borrowed: {{book.borrowed}}</p>
+
+  </div>
+  <!-- <div class="card-body">
+    <h5 class="card-title">Borrowed?/h5>
+  </div> -->
+  <!-- <ul class="list-group list-group-flush">
+    {% for borrow in borrowed %}
+      <li class="list-group-item">
+        <p><b>is the book borrowed :{{borrow.borrowed}}</b></p>
+        <p>date :{{borrow.borrowedate}}</p>
+        <p>borrowed by member : {{borrow.whoborrows}}</p>
+      </li>
+    {% endfor %}
+  </ul> -->
+
+
+    </div>
+  </div>
+</div>
+{% endblock content %}

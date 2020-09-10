@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Add a link to the bootstrap CDN here -->
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+  <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <style>
+  /* Container holding the image and the text */
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center
+}
+
+.xx {
+  font-family: "Times New Roman", Times, serif;
+  color:
+}
+
+.myimages {
+    display: flex;
+    overflow: hidden;
+    height: 50vw;
+    background: #333
+}
+
+.myimages img {
+    max-width: 100%;
+    vertical-align: middle;
+    border: 2px solid white;
+    box-sizing: border-box;
+    transition: opacity .2s
+}
+
+.myimages:hover img {
+    opacity: 0.5
+}
+
+.myimages img:hover {
+    opacity: 1
+}
+
+.first-column {
+    animation: var(--animation, none) 16s infinite linear
+}
+
+.first-column:hover {
+    animation-play-state: paused
+}
+
+.first-column:nth-of-type(odd) {
+    align-self: flex-end;
+    --direction: 50%
+}
+
+@keyframes slide {
+    to {
+        -webkit-transform: translateY(var(--direction, -50%));
+        transform: translateY(var(--direction, -50%))
+    }
+}
+.main{
+    background-color: #04010f
+    color: #04010f
+    }
+    .section{
+      background-color: #04010f
+      color: #04010f
+      }.container {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+
+  /* Bottom left text */
+  .bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+  }
+
+  /* Top left text */
+  .top-left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+  }
+
+  /* Top right text */
+  .top-right {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+  }
+
+  /* Bottom right text */
+  .bottom-right {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+  }
+
+  /* Centered text */
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .container {
+background-color:  #04010f
+max-width: 960px;
+}
+
+/*
+* Custom translucent site header
+*/
+
+.site-header {
+background-color: rgba(0, 0, 0, .85);
+-webkit-backdrop-filter: saturate(180%) blur(20px);
+backdrop-filter: saturate(180%) blur(20px);
+}
+.site-header a {
+color: #999;
+transition: ease-in-out color .15s;
+}
+.site-header a:hover {
+color: #fff;
+text-decoration: none;
+}
+
+/*
+* Dummy devices (replace them with your own or something else entirely!)
+*/
+
+.product-device {
+position: absolute;
+right: 10%;
+bottom: -30%;
+width: 300px;
+height: 540px;
+background-color: #333;
+border-radius: 21px;
+-webkit-transform: rotate(30deg);
+transform: rotate(30deg);
+}
+
+.product-device::before {
+position: absolute;
+top: 10%;
+right: 10px;
+bottom: 10%;
+left: 10px;
+content: "";
+background-color: rgba(255, 255, 255, .1);
+border-radius: 5px;
+}
+
+.product-device-2 {
+top: -25%;
+right: auto;
+bottom: 0;
+left: 5%;
+background-color: #e5e5e5;
+}
+
+
+/*
+* Extra utilities
+*/
+
+.border-top { border-top: 1px solid #e5e5e5; }
+.border-bottom { border-bottom: 1px solid #e5e5e5; }
+
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+.flex-equal > * {
+-ms-flex: 1;
+-webkit-box-flex: 1;
+flex: 1;
+}
+ @media (min-width: 768px) {
+.flex-md-equal > * {
+-ms-flex: 1;
+-webkit-box-flex: 1;
+flex: 1;
+}
+}
+
+.overflow-hidden { overflow: hidden; }
+  </style>
+  <!-- Uncomment the following line to include your custom CSS file -->
+  {% comment %}
+    <link rel="stylesheet" type="text/css" href="{% static 'custom.css' %}">
+  {% endcomment %}
+
+  <title>{% block title %}{% endblock title %}</title>
+</head>
+
+<body style = "background-color:#292b2c">
+  {% include "navbar.html" %}
+
+  <!-- Navbar -->
+  <nav class="site-header sticky-top py-1">
+    <div class="container d-flex flex-column flex-md-row justify-content-between">
+      <a class="py-2" href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="d-block mx-auto"><circle cx="12" cy="12" r="10"></circle><line x1="14.31" y1="8" x2="20.05" y2="17.94"></line><line x1="9.69" y1="8" x2="21.17" y2="8"></line><line x1="7.38" y1="12" x2="13.12" y2="2.06"></line><line x1="9.69" y1="16" x2="3.95" y2="6.06"></line><line x1="14.31" y1="16" x2="2.83" y2="16"></line><line x1="16.62" y1="12" x2="10.88" y2="21.94"></line></svg>
+      </a>
+
+      <a class="nav-link" href="{% url 'add-book' %}">Add book</a>
+      <input class="form-control mr-sm-2" type="text" class="form-control" placeholder="Search" aria-label="Search" name="q" value="{{request.GET.q}}">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    {% block content %}
+
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    {% endblock content %}
+  </div>
+  <footer class="container py-5">
+    <div class="row">
+      <div class="col-12 col-md">
+        <small class="d-block mb-3 text-muted">&copy;RAGHAD 2020</small>
+      </div>
+      <div class="col-6 col-md">
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- Add your bootstrap script tags here -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="../../assets/js/vendor/holder.min.js"></script>
+    <script>
+      Holder.addTheme('thumb', {
+        bg: '#55595c',
+        fg: '#eceeef',
+        text: 'Thumbnail'
+      });
+    </script>
+</body>
+
+</html>
